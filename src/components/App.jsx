@@ -1,3 +1,9 @@
+import React, { Component } from 'react';
+import Searchbar from './Searchbar/Searchbar';
+import Loader from './Loader/Loader';
+import ImageGallery from './ImageGallery/ImageGallery';
+import { fetchImagesWithQuery } from '../utils/GetImage.js';
+
 class App extends Component {
   state = {
     images: [],
@@ -28,6 +34,7 @@ class App extends Component {
 
     return (
       <>
+        <Searchbar />
         {/* {isLoading ? <Loader /> : <ImageGallery images={images} />} */}
         {error && <p>Something went wrong: {error.message}</p>}
         {isLoading && <Loader />}
@@ -36,3 +43,5 @@ class App extends Component {
     );
   }
 }
+
+export default App;
