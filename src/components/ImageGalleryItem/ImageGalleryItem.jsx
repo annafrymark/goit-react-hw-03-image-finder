@@ -1,7 +1,11 @@
-import '../styles.css';
+import css from '../styles.module.css';
 
-const ImageGallery = ({ images }) => {
-  return <li className={css.ImageGalleryItem}>{/* <img="" alt=""/> */}</li>;
+const ImageGalleryItem = ({ webImage, largeImage }) => {
+  return (
+    <li className={css.ImageGalleryItem}>
+      <img src={webImage} alt=""/>
+    </li>
+  );
 };
 
-export default ImageGallery;
+export default ImageGalleryItem;

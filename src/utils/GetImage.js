@@ -1,12 +1,15 @@
 import axios from 'axios';
 let apiKey = '33268326-bb3a299852ac950b9c9a6ecaa';
-let page = 1;
 
-axios.defaults.baseURL = `https://pixabay.com/api/?q=${searchQuery.value}&page=${page}&key=${apiKey}&image_type=photo&orientation=horizontal&per_page=12`;
+axios.defaults.baseURL = `https://pixabay.com/api/`;
+//?q=${searchQuery.value}&page=${page}&key=${apiKey}&image_type=photo&orientation=horizontal&per_page=12
+//pixabay.com/api/search?query=cats&page=1&key=33268326-bb3a299852ac950b9c9a6ecaa&image_type=photo&orientation=horizontal&per_page=12
 
-const fetchImagesWithQuery = async searchQuery => {
-  const response = await axios.get(`/search?query=${searchQuery}`);
+export const fetchImagesWithQuery = async (searchQuery , page) => {
+  console.log('jestem w get image');
+
+  const response = await axios.get(
+    `/?q=${searchQuery}&page=${page}&key=${apiKey}&image_type=photo&orientation=horizontal&per_page=12`
+  );
   return response.data.hits;
 };
-
-export default { fetchImagesWithQuery };
