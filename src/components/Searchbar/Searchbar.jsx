@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import css from '../styles.module.css';
+import PropTypes from 'prop-types';
 
 class Searchbar extends Component {
   state = { inputValue: '' };
@@ -10,7 +11,6 @@ class Searchbar extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
     this.props.onSubmit(this.state.inputValue);
   };
 
@@ -37,3 +37,7 @@ class Searchbar extends Component {
   }
 }
 export default Searchbar;
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func,
+};

@@ -1,9 +1,8 @@
 import css from '../styles.module.css';
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
+import PropTypes from 'prop-types';
 
-const ImageGallery = ({ images }) => {
-  console.log(images);
-  console.log('jestem w ImageGallery');
+const ImageGallery = ({ images, showModal }) => {
   return (
     <ul className={css.ImageGallery}>
       {images.map(image => (
@@ -11,6 +10,8 @@ const ImageGallery = ({ images }) => {
           key={image.id}
           webImage={image.webformatURL}
           largeImage={image.largeImageURL}
+          tags={image.tags}
+          showModal={showModal}
         />
       ))}
     </ul>
@@ -18,3 +19,15 @@ const ImageGallery = ({ images }) => {
 };
 
 export default ImageGallery;
+
+ImageGallery.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.number,
+      webImage: PropTypes.string,
+      largeImage: PropTypes.string,
+      tags: PropTypes.string,
+    })
+  ),
+  showModal: PropTypes.func,
+};
