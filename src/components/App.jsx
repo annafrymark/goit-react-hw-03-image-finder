@@ -17,8 +17,6 @@ class App extends Component {
   };
   page = 1;
 
- 
-
   getImagesData = async inputValue => {
     this.setState({ isLoading: true });
     try {

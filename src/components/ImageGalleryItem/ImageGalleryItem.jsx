@@ -1,4 +1,4 @@
-import css from '../styles.module.css';
+import css from './imageGalleryItem.module.css';
 import PropTypes from 'prop-types';
 
 const ImageGalleryItem = ({ webImage, largeImage, tags, showModal }) => {

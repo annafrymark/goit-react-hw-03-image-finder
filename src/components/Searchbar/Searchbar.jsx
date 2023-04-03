@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import css from '../styles.module.css';
+import css from './searchbar.module.css';
 import PropTypes from 'prop-types';
 
 class Searchbar extends Component {
